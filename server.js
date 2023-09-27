@@ -7,14 +7,16 @@ const { errorMiddleware } = require("./middlewares/errorMiddleware");
 const cloudinary = require("cloudinary");
 const database = require("./config/database");
 database();
+// let port = process.env.PORT || 4000;
+let port = "https://siwatech.onrender.com/";
 cloudinary.v2.config({
   cloud_name: process.env.CLOUDINARY_CLIENT_NAME,
   api_key: process.env.CLOUDINARY_CLIENT_API,
   api_secret: process.env.CLOUDINARY_CLIENT_SECRET,
 });
 app.use(errorMiddleware);
-let server = app.listen(process.env.PORT, () => {
-  console.log(`server is running at ${process.env.PORT}`);
+let server = app.listen(port, () => {
+  console.log(`server is running at ${port}`);
 });
 
 // Unhandled promise rejection like if the db server error, it will shutdown the server
