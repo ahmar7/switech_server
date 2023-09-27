@@ -7,8 +7,7 @@ const { errorMiddleware } = require("./middlewares/errorMiddleware");
 const cloudinary = require("cloudinary");
 const database = require("./config/database");
 database();
-// let port = process.env.PORT || 4000;
-let port = "https://siwatech.onrender.com/";
+let port = process.env.PORT || 4000;
 cloudinary.v2.config({
   cloud_name: process.env.CLOUDINARY_CLIENT_NAME,
   api_key: process.env.CLOUDINARY_CLIENT_API,
