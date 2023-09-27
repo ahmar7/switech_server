@@ -12,6 +12,7 @@ const { isAuthorizedUser, authorizedRoles } = require("../middlewares/auth");
 let router = express.Router();
 
 router.route("/register").post(RegisterUser);
+router.route("/").get("Hi");
 router.route("/login").post(loginUser);
 router.route("/logout").get(logoutUser);
 router.route("/auth").get(isAuthorizedUser, authorizedRoles("admin"));

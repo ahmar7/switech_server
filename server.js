@@ -7,14 +7,14 @@ const { errorMiddleware } = require("./middlewares/errorMiddleware");
 const cloudinary = require("cloudinary");
 const database = require("./config/database");
 database();
-let port = process.env.PORT || 4000;
+let port = process.env.PORT || 5000;
 cloudinary.v2.config({
   cloud_name: process.env.CLOUDINARY_CLIENT_NAME,
   api_key: process.env.CLOUDINARY_CLIENT_API,
   api_secret: process.env.CLOUDINARY_CLIENT_SECRET,
 });
 app.use(errorMiddleware);
-let server = app.listen(4000, () => {
+let server = app.listen(port, () => {
   console.log(`server is running at ${port}`);
 });
 
