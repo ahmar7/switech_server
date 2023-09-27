@@ -14,7 +14,7 @@ cloudinary.v2.config({
   api_secret: process.env.CLOUDINARY_CLIENT_SECRET,
 });
 app.use(errorMiddleware);
-let server = app.listen(port, () => {
+let server = app.listen(4000, () => {
   console.log(`server is running at ${port}`);
 });
 
